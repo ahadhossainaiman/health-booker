@@ -1,0 +1,80 @@
+@import url(app.css);
+
+
+.card {
+    background-color: #fff;
+    max-width: 800px;
+    box-shadow: 2px 2px 5px #9E9E9E, -1px -1px 5px #9E9E9E;
+    border-radius: 19px;
+    display: flex;
+    grid-template-column: repeat(5, 1fr);
+    font-family: 'Karla', sans-serif;
+}
+
+.card img {
+    object-fit: cover;
+
+}
+
+.card-content {
+    grid-column: 3 / 5;
+    padding: 10px 30px;
+    border-left: 1px solid #ccc;
+}
+
+.h2 {
+    text-transform: uppercase;
+    font-family: 'Playfair-Display';
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1;
+        padding-bottom: 2%;
+}
+.h3 {
+    text-transform: uppercase;
+    font-family: 'Playfair-Display';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2% 0;
+}
+.excerpt{
+    font-family: 'Poppins', sans-serif;
+        font-weight: 100;
+        font-size: 14px;
+        padding-top: 10px;
+        line-height: 2;
+        text-align: justify;
+}
+.h1 {
+text-transform: uppercase;
+    font-family: 'Playfair-Display';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.card-content .author {
+    border-top: 1px solid #cdcdcd;
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 25px 0 10px 0;
+    color: #555;
+    display: inline-block;
+}
+
+@media only screen and (max-width:600px) {
+    .card {
+        display: block;
+    }
+
+    .card .img-container {
+        height: 250px;
+        width: 100%;
+    }
+
+    .card-content {
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+}

@@ -11,7 +11,13 @@ const notificationRouter = require("./routes/notificationRouter");
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5000"],
+    methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use("/api/user", userRouter);
 app.use("/api/doctor", doctorRouter);
@@ -21,6 +27,10 @@ app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+app.get("/", (req, res) => {
+  res.json("Hello");
 });
 
 app.listen(port, () => {});
